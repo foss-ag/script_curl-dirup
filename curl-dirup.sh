@@ -17,6 +17,6 @@ case $3 in
 esac
 
 # create dirs relative to current recursively
-find $3 -type d ! -path . -exec curl --user $2 -X MKCOL $1/$(realpath --relative-to="." {}) \;
+find $3 -type d ! -path . -exec curl --user $2 -X MKCOL $1/{} \;
 # upload files recursively
 find $3 -type f -exec curl --user $2 -T {} $1/{} \;
